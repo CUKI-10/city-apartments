@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija - City Apartments</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome za ikone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="logo-City.png">
+    <style>
+        :root {
+    --budva-blue: #006994;
+    --budva-gold: #D4A017;
+    --budva-white: #F5F6F5;
+    --budva-dark: #00344A;
+}
+
+/* Navbar stilovi */
+.navbar {
+    background: linear-gradient(135deg, var(--budva-blue), var(--budva-dark));
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease, box-shadow 0.3s ease; /* Dodata tranzicija */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-logo {
+    height: 40px;
+    width: auto;
+    border-radius: 10px;
+    animation: glowingShadow 2s infinite ease-in-out;
+}
+
+@keyframes glowingShadow {
+    0% { box-shadow: 0 0 10px var(--budva-gold), 0 0 20px var(--budva-gold); }
+    50% { box-shadow: 0 0 20px var(--budva-gold), 0 0 30px var(--budva-gold), 0 0 40px var(--budva-gold); }
+    100% { box-shadow: 0 0 10px var(--budva-gold), 0 0 20px var(--budva-gold); }
+}
+
+.navbar-brand:hover .navbar-logo {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: var(--budva-white) !important;
+    margin: 0 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.4s ease;
+}
+
+.nav-link:hover {
+    color: var(--budva-gold) !important;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: var(--budva-gold) !important;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: var(--budva-white);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--budva-gold);
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(360deg);
+}
+
+.navbar-toggler {
+    border: 2px solid var(--budva-white);
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(245, 246, 245, 0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Responzivnost */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--budva-dark);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+    .social-links {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    .nav-link.active {
+        color: var(--budva-gold) !important;
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 30px;
+        border-radius: 8px;
+        animation: glowingShadow 2s infinite ease-in-out;
+    }
+}
+
+        /* Modernizirani Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--budva-dark), var(--budva-blue));
+            color: var(--budva-white);
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .footer-column {
+            padding: 1rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1.3rem;
+            color: var(--budva-gold);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--budva-gold);
+        }
+
+        .footer-link {
+            display: flex;
+            align-items: center;
+            color: var(--budva-white);
+            text-decoration: none;
+            margin: 0.8rem 0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link i {
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-link:hover {
+            color: var(--budva-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin: 0.8rem 0;
+            font-size: 1rem;
+        }
+
+        .footer-contact i {
+            margin-right: 0.5rem;
+            color: var(--budva-gold);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-credit {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: rgba(245, 246, 245, 0.7);
+            border-top: 1px solid rgba(245, 246, 245, 0.2);
+            padding-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-link, .footer-contact p {
+                justify-content: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+        }
+
+        /* Sticky footer korekcije */
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+            background-color: var(--budva-white);
+        }
+
+        /* Galerija stilovi */
+        .gallery-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 2rem; /* Smanjen razmak */
+        }
+
+        .gallery-header h1 {
+            color: var(--budva-dark);
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .gallery-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px; /* Smanjena dužina linije */
+            height: 3px;
+            background: var(--budva-gold);
+        }
+
+        .gallery-header p {
+            color: var(--budva-dark);
+            font-size: 1.1rem; /* Smanjena veličina teksta */
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem; /* Smanjen razmak */
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap; /* Omogućava prelamanje na manjim ekranima */
+        }
+
+        .filter-btn {
+            background: var(--budva-blue);
+            color: var(--budva-white);
+            border: none;
+            padding: 0.4rem 1.2rem; /* Smanjen padding */
+            border-radius: 20px; /* Smanjen radius */
+            font-size: 0.9rem; /* Smanjena veličina teksta */
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--budva-gold);
+            color: var(--budva-dark);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smanjena minimalna širina */
+            gap: 1rem; /* Smanjen razmak */
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px; /* Smanjen radius */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Smanjena senka */
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px; /* Smanjena visina za mobilne */
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 52, 74, 0.8);
+            color: var(--budva-white);
+            padding: 0.8rem; /* Smanjen padding */
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item h3 {
+            margin: 0;
+            font-size: 1.1rem; /* Smanjena veličina teksta */
+        }
+
+        /* Modal stilovi za uvećanu sliku */
+        .modal-content {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .modal-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        .modal-image {
+            width: 800px; /* Osnovna veličina za desktop */
+            height: 800px;
+            object-fit: contain; /* Održava proporcije slike */
+        }
+
+        /* Uklanjanje animacija skaliranja */
+        .modal.show .modal-image,
+        .modal.fade .modal-image {
+            transform: none; /* Bez skaliranja */
+        }
+
+        /* Responzivnost za galeriju */
+        @media (max-width: 991px) and (min-width: 769px) {
+            .gallery-section {
+                padding: 3rem 1.5rem; /* Smanjen padding za tablete */
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item img {
+                height: 200px; /* Smanjena visina za tablete */
+            }
+            .modal-image {
+                width: 600px; /* Smanjena veličina za tablete */
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-section {
+                padding: 2rem 1rem;
+            }
+            .gallery-header h1 {
+                font-size: 2rem;
+            }
+            .gallery-header p {
+                font-size: 1rem;
+            }
+            .gallery-filters {
+                gap: 0.5rem;
+            }
+            .filter-btn {
+                padding: 0.3rem 1rem;
+                font-size: 0.85rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .gallery-item {
+                height: 180px; /* Smanjena visina za mobilne */
+            }
+            .gallery-item img {
+                height: 100%;
+            }
+            .gallery-item h3 {
+                font-size: 1rem;
+            }
+            .modal-image {
+                
+                max-width: 650px; /* Maksimalna veličina za mobilne */
+               
+                max-height: 650px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-section {
+                padding: 1.5rem 0.5rem;
+            }
+            .gallery-header h1 {
+                font-size: 1.8rem;
+            }
+            .gallery-header p {
+                font-size: 0.9rem;
+            }
+            .gallery-item {
+                height: 150px; /* Još manja visina za veoma male ekrane */
+            }
+            .gallery-item h3 {
+                font-size: 0.9rem;
+            }
+            .modal-image {
+                max-width: 400px; /* Još manja veličina za veoma male ekrane */
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="navi-logo1.jpg" alt="City Apartments Logo" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Početna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="o-nama.html">O nama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="galerija.html">Galerija</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakti.html">Kontakti</a>
+                    </li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="gallery-section" id="galerija">
+            <div class="gallery-header">
+                <h1>Galerija</h1>
+                <p>Pogledajte našu kolekciju nekih od slika iz nasih 14 apartmana, enterijera i predivnih pogleda koje City Apartments nudi.</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Sve</button>
+                <button class="filter-btn" data-filter="apartmani">Apartmani</button>
+                <button class="filter-btn" data-filter="enterijer">Enterijer</button>
+                <button class="filter-btn" data-filter="pogled">Pogled</button>
+            </div>
+
+          <div class="gallery-grid">
+    <div class="gallery-item" data-category="apartmani">
+        <img src="spoljna1.jpg" alt="Apartman 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="spoljna1.jpg">
+        <div class="overlay">
+            <h3>Apartman 1</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="zgrada1.jpg" alt="Enterijer 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="zgrada1.jpg">
+        <div class="overlay">
+            <h3>Enterijer 1</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="pogled1.jpg" alt="Pogled 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="pogled1.jpg">
+        <div class="overlay">
+            <h3>Pogled 1</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="apartmani">
+        <img src="delux1B.jpg" alt="Apartman 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="delux1B.jpg">
+        <div class="overlay">
+            <h3>Apartman 2</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="enterijer-1.jpg" alt="Enterijer 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="enterijer-1.jpg">
+        <div class="overlay">
+            <h3>Enterijer 2</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="pogled2.jpg" alt="Pogled 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="pogled2.jpg">
+        <div class="overlay">
+            <h3>Pogled 2</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="apartmani">
+        <img src="delux1.jpg" alt="Apartman 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="delux1.jpg">
+        <div class="overlay">
+            <h3>Apartman 3</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="slika-za3.jpg" alt="Enterijer 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slika-za3.jpg">
+        <div class="overlay">
+            <h3>Enterijer 3</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="pogled3.jpg" alt="Pogled 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="pogled3.jpg">
+        <div class="overlay">
+            <h3>Pogled 3</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="apartmani">
+        <img src="apartmn44.jpg" alt="Apartman 4" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="apartmn44.jpg">
+        <div class="overlay">
+            <h3>Apartman 4</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="delux2a.jpg" alt="Enterijer 4" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="delux2a.jpg">
+        <div class="overlay">
+            <h3>Enterijer 4</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="pogled8.jpg" alt="Pogled 4" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="pogled8.jpg">
+        <div class="overlay">
+            <h3>Pogled 4</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="apartmani">
+        <img src="apartman5.jpg" alt="Apartman 5" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="apartman5.jpg">
+        <div class="overlay">
+            <h3>Apartman 5</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="spavaca.jpg" alt="Enterijer 5" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="spavaca.jpg">
+        <div class="overlay">
+            <h3>Enterijer 5</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="pogled6.jpg" alt="Pogled 5" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="pogled6.jpg">
+        <div class="overlay">
+            <h3>Pogled 5</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="apartmani">
+        <img src="delux2B.jpg" alt="Apartman 6" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="delux2B.jpg">
+        <div class="overlay">
+            <h3>Apartman 6</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="emterijer7.jpg" alt="Enterijer 6" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="emterijer7.jpg">
+        <div class="overlay">
+            <h3>Enterijer 6</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="sv.stefan.jpg" alt="Pogled 6" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="sv.stefan.jpg">
+        <div class="overlay">
+            <h3>Pogled 6</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="apartmani">
+        <img src="delux2.jpg" alt="Apartman 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="delux2.jpg">
+        <div class="overlay">
+            <h3>Apartman 7</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="enterijerlux.jpg" alt="Enterijer 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="enterijerlux.jpg">
+        <div class="overlay">
+            <h3>Enterijer 7</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="pogler11.jpg" alt="Pogled 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="pogler11.jpg">
+        <div class="overlay">
+            <h3>Pogled 7</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="apartmani">
+        <img src="apartman8.jpg" alt="Apartman 8" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="apartman8.jpg">
+        <div class="overlay">
+            <h3>Apartman 8</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="delux5.jpg" alt="Enterijer 8" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="delux5.jpg">
+        <div class="overlay">
+            <h3>Enterijer 8</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="pogled15.jpg" alt="Pogled 8" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="pogled15.jpg">
+        <div class="overlay">
+            <h3>Pogled 8</h3>
+        </div>
+    </div>
+ <div class="gallery-item" data-category="apartmani">
+        <img src="apartman99.jpg" alt="Apartman 9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="apartman99.jpg">
+        <div class="overlay">
+            <h3>Apartman 9</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="enterijer9.jpg" alt="Enterijer 9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="enterijer9.jpg">
+        <div class="overlay">
+            <h3>Enterijer 9</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="hero-slika.jpg" alt="Pogled 9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="hero-slika.jpg">
+        <div class="overlay">
+            <h3>Pogled 9</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="apartmani">
+        <img src="delux5a.jpg" alt="Apartman 10" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="delux5a.jpg">
+        <div class="overlay">
+            <h3>Apartman 10</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="enterijer555.jpg" alt="Enterijer 10" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="enterijer555.jpg">
+        <div class="overlay">
+            <h3>Enterijer 10</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="delux4.jpg" alt="Pogled 10" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="delux4.jpg">
+        <div class="overlay">
+            <h3>Pogled 10</h3>
+        </div>
+    </div>
+
+       <div class="gallery-item" data-category="apartmani">
+        <img src="novo-ap5.jpg" alt="Apartman 11" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="novo-ap5.jpg">
+        <div class="overlay">
+            <h3>Apartman 11</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="enterijer">
+        <img src="novo-ap4.jpg" alt="Enterijer 11" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="novo-ap4.jpg">
+        <div class="overlay">
+            <h3>Enterijer 11</h3>
+        </div>
+    </div>
+    <div class="gallery-item" data-category="pogled">
+        <img src="novo-ap6.jpg" alt="Pogled 11" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="novo-ap6.jpg">
+        <div class="overlay">
+            <h3>Pogled 11</h3>
+        </div>
+    </div>
+
+</div>
+        </section>
+    </main>
+
+      <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Navigacija</h4>
+                <a href="index.html" class="footer-link"><i class="fas fa-home"></i> Početna</a>
+                <a href="o-nama.html" class="footer-link"><i class="fas fa-info-circle"></i> O nama</a>
+                <a href="galerija.html" class="footer-link"><i class="fas fa-images"></i> Galerija</a>
+                <a href="kontakti.html" class="footer-link"><i class="fas fa-envelope"></i> Kontakti</a>
+            </div>
+            <div class="footer-column footer-contact">
+                <h4>Kontakt</h4>
+                <p><i class="fas fa-phone"></i> +382 68 871 777</p>
+                <p><i class="fas fa-envelope"></i> info@city-apartments.me</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ul. Mediteranska 55, 85310 Budva, Crna Gora</p>
+            </div>
+            <div class="footer-column">
+                <h4>Pratite nas</h4>
+                <div class="footer-social">
+                    <a href="https://wa.me/38269871777" target="_blank" class="social-icon">
+                   <i class="fab fa-whatsapp"></i>
+                </a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-credit">
+            © 2025  cryptogorac.com | Sva prava zadržana.
+        </div>
+    </footer>
+
+    <!-- Modal za uvećanu sliku -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 1rem; top: 1rem; z-index: 11;"></button>
+                <div class="modal-body">
+                    <img src="" alt="Uvećana slika" class="modal-image" id="modalImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbar = document.querySelector('.navbar');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            // Aktivni link u navbaru
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Efekat skrolovanja navigacije
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.padding = '1rem 2rem';
+                    navbar.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.3)';
+                } else {
+                    navbar.style.padding = '1.5rem 2rem';
+                    navbar.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+                }
+            });
+
+            // Filtriranje galerije
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 10);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+
+            // Inicijalna postavka opacity za animaciju
+            galleryItems.forEach(item => {
+                item.style.transition = 'opacity 0.3s ease';
+                item.style.opacity = '1';
+            });
+
+            // Postavljanje slike u modal pri otvaranju
+            const modal = document.getElementById('imageModal');
+            modal.addEventListener('show.bs.modal', (event) => {
+                const button = event.relatedTarget;
+                const imageSrc = button.getAttribute('data-bs-image');
+                const modalImage = document.getElementById('modalImage');
+                modalImage.src = imageSrc || button.src; // Koristi data-bs-image ili izvornu sliku ako nije definirana
+            });
+        });
+    </script>
+</body>
+</html>
