@@ -311,257 +311,255 @@
             background-color: var(--budva-white);
         }
 
-        /* Apartmani sekcija */
-        .apartments-section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      /* Apartmani sekcija */
+.apartments-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .apartments-section h2 {
-            text-align: center;
-            color: var(--budva-dark);
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
+.apartments-section h2 {
+    text-align: center;
+    color: var(--budva-dark);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
 
-        .apartments-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--budva-gold);
-        }
+.apartments-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--budva-gold);
+}
 
-        .apartments-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
+.apartments-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ispravka: 2 kolone umesto 3 */
+    gap: 2rem;
+}
 
-        .apartment-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
+.apartment-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
 
-        .apartment-card:hover {
-            transform: translateY(-10px);
-        }
+.apartment-card:hover {
+    transform: translateY(-10px);
+}
 
-        .apartment-card img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-        }
+.apartment-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
 
-        .apartment-card-content {
-            padding: 1.5rem;
-            text-align: center;
-        }
+.apartment-card-content {
+    padding: 1.5rem;
+    text-align: center;
+}
 
-        .apartment-card-content h3 {
-            color: var(--budva-dark);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
+.apartment-card-content h3 {
+    color: var(--budva-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
 
-        .apartment-card-content button {
-            background: var(--budva-blue);
-            color: var(--budva-white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            border: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
+.apartment-card-content button {
+    background: var(--budva-blue);
+    color: var(--budva-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
 
-        .apartment-card-content button:hover {
-            background: var(--budva-gold);
-            color: var(--budva-dark);
-        }
+.apartment-card-content button:hover {
+    background: var(--budva-gold);
+    color: var(--budva-dark);
+}
 
-        /* Modal stilovi */
-        .modal-content {
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            background: var(--budva-white);
-             border: 3px solid var(--budva-light-blue);
-        }
+/* Modal stilovi */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: var(--budva-white);
+    border: 3px solid var(--budva-light-blue);
+}
 
-        .modal-header {
-            background: var(--budva-blue);
-            color: var(--budva-white);
-            border-bottom: none;
-            padding: 1rem 1.5rem;
+.modal-header {
+    background: var(--budva-blue);
+    color: var(--budva-white);
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+}
 
-        }
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
 
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
+.modal-body {
+    padding: 2rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
 
-        .modal-body {
-            padding: 2rem;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
+.modal-body .main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
 
-        .modal-body .main-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
+.modal-body .small-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
 
-        .modal-body .small-images {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
+.modal-body .small-images img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
-        .modal-body .small-images img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
+.modal-body p {
+    color: var(--budva-dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
 
-        .modal-body p {
-            color: var(--budva-dark);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin: 1rem 0;
-        }
+.modal-footer {
+    border-top: none;
+    padding: 1rem 1.5rem;
+    background: var(--budva-white);
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
 
-        .modal-footer {
-            border-top: none;
-            padding: 1rem 1.5rem;
-            background: var(--budva-white);
-            position: sticky;
-            bottom: 0;
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-        }
+.modal-footer .reserve-btn {
+    background: var(--budva-gold);
+    color: var(--budva-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: auto;
+}
 
-        .modal-footer .reserve-btn {
-            background: var(--budva-gold);
-            color: var(--budva-dark);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            width: auto;
-        }
+.modal-footer .reserve-btn:hover {
+    background: var(--budva-blue);
+    color: var(--budva-white);
+}
 
-        .modal-footer .reserve-btn:hover {
-            background: var(--budva-blue);
-            color: var(--budva-white);
-        }
+/* Responzivnost za apartmane i modal */
+@media (max-width: 991px) and (min-width: 769px) {
+    .apartments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-        /* Responzivnost za apartmane i modal */
-        @media (max-width: 991px) and (min-width: 769px) {
-            .apartments-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+    .apartment-card img {
+        height: 208px;
+    }
 
-            .apartment-card img {
-                height: 208px;
-            }
+    .modal-body .main-image {
+        height: 300px;
+    }
 
-            .modal-body .main-image {
-                height: 300px;
-            }
+    .modal-body .small-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-            .modal-body .small-images {
-                grid-template-columns: repeat(2, 1fr);
-            }
+    .modal-body .small-images img {
+        height: 120px;
+    }
+}
 
-            .modal-body .small-images img {
-                height: 120px;
-            }
-        }
+@media (max-width: 768px) {
+    .apartments-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 
-        @media (max-width: 768px) {
-            .apartments-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
+    .apartment-card img {
+        height: 182px;
+    }
 
-            .apartment-card img {
-                height: 182px;
-            }
+    .modal-dialog {
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+        height: 90vh;
+    }
 
-            .modal-dialog {
-                margin: 1rem;
-                max-width: calc(100% - 2rem);
-                height: 90vh;
-            }
+    .modal-content {
+        border-radius: 10px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-            .modal-content {
-                border-radius: 10px;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
+    .modal-header {
+        padding: 0.75rem 1rem;
+    }
 
-            .modal-header {
-                padding: 0.75rem 1rem;
-            }
+    .modal-title {
+        font-size: 1.25rem;
+    }
 
-            .modal-title {
-                font-size: 1.25rem;
-            }
+    .modal-body {
+        padding: 1rem;
+        max-height: none;
+        flex: 1;
+        overflow-y: auto;
+    }
 
-            .modal-body {
-                padding: 1rem;
-                max-height: none;
-                flex: 1;
-                overflow-y: auto;
-            }
+    .modal-body .main-image {
+        height: 250px;
+    }
 
-            .modal-body .main-image {
-                height: 250px;
-            }
+    .modal-body .small-images {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
 
-            .modal-body .small-images {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
+    .modal-body .small-images img {
+        height: 100px;
+    }
 
-            .modal-body .small-images img {
-                height: 100px;
-            }
+    .modal-body p {
+        font-size: 0.95rem;
+        margin: 0.75rem 0;
+    }
 
-            .modal-body p {
-                font-size: 0.95rem;
-                margin: 0.75rem 0;
-            }
+    .modal-footer {
+        padding: 0.75rem 1rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-            .modal-footer {
-                padding: 0.75rem 1rem;
-                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .modal-footer .reserve-btn {
-                padding: 0.8rem 2rem;
-                font-size: 1rem;
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
+    .modal-footer .reserve-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
         /* O nama sekcija */
         .about-section {
             padding: 5rem 2rem;
@@ -1242,101 +1240,133 @@
         </section>
 
         <section class="apartments-section">
-            <h2>Deluxe Apartmani</h2>
-            <div class="apartments-grid">
-                <div class="apartment-card">
-                    <img src="delux1.jpg" alt="Deluxe Apartman 1">
-                    <div class="apartment-card-content">
-                        <h3>Three bedroom Apartment</h3>
-                        <button data-bs-toggle="modal" data-bs-target="#apartman1Modal">Saznaj više</button>
-                    </div>
-                </div>
-                <div class="apartment-card">
-                    <img src="delux2B.jpg" alt="Deluxe Apartman 2">
-                    <div class="apartment-card-content">
-                        <h3>Black&White Apartment</h3>
-                        <button data-bs-toggle="modal" data-bs-target="#apartman2Modal">Saznaj više</button>
-                    </div>
-                </div>
-                <div class="apartment-card">
-                    <img src="delux3a.jpg" alt="Deluxe Apartman 3">
-                    <div class="apartment-card-content">
-                        <h3>Deluxe Apartment </h3>
-                        <button data-bs-toggle="modal" data-bs-target="#apartman3Modal">Saznaj više</button>
-                    </div>
-                </div>
+    <h2>Deluxe Apartmani</h2>
+    <div class="apartments-grid">
+        <div class="apartment-card">
+            <img src="delux1.jpg" alt="Deluxe Apartman 1">
+            <div class="apartment-card-content">
+                <h3>Three bedroom Apartment</h3>
+                <button data-bs-toggle="modal" data-bs-target="#apartman1Modal">Saznaj više</button>
             </div>
+        </div>
+        <div class="apartment-card">
+            <img src="delux2B.jpg" alt="Deluxe Apartman 2">
+            <div class="apartment-card-content">
+                <h3>Black&White Apartment</h3>
+                <button data-bs-toggle="modal" data-bs-target="#apartman2Modal">Saznaj više</button>
+            </div>
+        </div>
+        <div class="apartment-card">
+            <img src="delux3a.jpg" alt="Deluxe Apartman 3">
+            <div class="apartment-card-content">
+                <h3>Deluxe Apartment</h3>
+                <button data-bs-toggle="modal" data-bs-target="#apartman3Modal">Saznaj više</button>
+            </div>
+        </div>
+        <!-- Dodati četvrti apartman: Joves -->
+        <div class="apartment-card">
+            <img src="deJoves1.jpg" alt="Joves Apartman">
+            <div class="apartment-card-content">
+                <h3>WoW</h3>
+                <button data-bs-toggle="modal" data-bs-target="#apartman4Modal">Saznaj više</button>
+            </div>
+        </div>
+    </div>
 
-            <!-- Modali -->
-            <div class="modal fade" id="apartman1Modal" tabindex="-1" aria-labelledby="apartman1ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="apartman1ModalLabel">Three bedroom Apartment</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="delux2.jpg" class="main-image" alt="Deluxe Apartman 1">
-                            <div class="small-images">
-                                <img src="delux3.jpg" alt="Detalj 1">
-                                <img src="delux4.jpg" alt="Detalj 2">
-                                <img src="delux5.jpg" alt="Detalj 3">
-                            </div>
-                            <p>3 spavaće sobe, 3 kupatila, pomoćni toalet, površine 240 m2… Potpuno opremljena kuhinja, 5. sprat… Mikrotalasna, tost za  hleb, 2 frižidera, vešeraj!!</p>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="kontakti.html" class="reserve-btn">Rezerviši</a>
-                        </div>
+    <!-- Modali -->
+    <div class="modal fade" id="apartman1Modal" tabindex="-1" aria-labelledby="apartman1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apartman1ModalLabel">Three bedroom Apartment</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="delux2.jpg" class="main-image" alt="Deluxe Apartman 1">
+                    <div class="small-images">
+                        <img src="delux3.jpg" alt="Detalj 1">
+                        <img src="delux4.jpg" alt="Detalj 2">
+                        <img src="delux5.jpg" alt="Detalj 3">
                     </div>
+                    <p>3 spavaće sobe, 3 kupatila, pomoćni toalet, površine 240 m2… Potpuno opremljena kuhinja, 5. sprat… Mikrotalasna, tost za hleb, 2 frižidera, vešeraj!!</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="kontakti.html" class="reserve-btn">Rezerviši</a>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="modal fade" id="apartman2Modal" tabindex="-1" aria-labelledby="apartman2ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="apartman2ModalLabel">Black&White Apartment</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="novo-ap5.jpg" class="main-image" alt="Deluxe Apartman 2">
-                            <div class="small-images">
-                                <img src="novo-ap6.jpg" alt="Detalj 1">
-                                <img src="novo-ap4.jpg" alt="Detalj 2">
-                                <img src="novo-ap3.jpg" alt="Detalj 3">
-                            </div>
-                            <p>100 kvadrata - dvosoban Stan - Kupatilo - dodatno WC - Balkon 3 kvadrata, kuhinja full opremljena, peti sprat, parcijalan pogled na more.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="kontakti.html" class="reserve-btn">Rezerviši</a>
-                        </div>
+    <div class="modal fade" id="apartman2Modal" tabindex="-1" aria-labelledby="apartman2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apartman2ModalLabel">Black&White Apartment</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="novo-ap5.jpg" class="main-image" alt="Deluxe Apartman 2">
+                    <div class="small-images">
+                        <img src="novo-ap6.jpg" alt="Detalj 1">
+                        <img src="novo-ap4.jpg" alt="Detalj 2">
+                        <img src="novo-ap3.jpg" alt="Detalj 3">
                     </div>
+                    <p>100 kvadrata - dvosoban Stan - Kupatilo - dodatno WC - Balkon 3 kvadrata, kuhinja full opremljena, peti sprat, parcijalan pogled na more.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="kontakti.html" class="reserve-btn">Rezerviši</a>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="modal fade" id="apartman3Modal" tabindex="-1" aria-labelledby="apartman3ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="apartman3ModalLabel">Deluxe Apartment </h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="novo-ap.jpg" class="main-image" alt="Deluxe Apartman 3">
-                            <div class="small-images">
-                                <img src="emterijer7.jpg" alt="Detalj 1">
-                                <img src="novo-ap2.jpg" alt="Detalj 2">
-                                <img src="delux4a.jpg" alt="Detalj 3">
-                            </div>
-                            <p>120 kvadrata, dvosoban. Kupatilo, dodatno wc, kuhinja full opeemljena. Balkon ka prednjoj strani, balkon u sobama.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="kontakti.html" class="reserve-btn">Rezerviši</a>
-                        </div>
+    <div class="modal fade" id="apartman3Modal" tabindex="-1" aria-labelledby="apartman3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apartman3ModalLabel">Deluxe Apartment</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="novo-ap.jpg" class="main-image" alt="Deluxe Apartman 3">
+                    <div class="small-images">
+                        <img src="emterijer7.jpg" alt="Detalj 1">
+                        <img src="novo-ap2.jpg" alt="Detalj 2">
+                        <img src="delux4a.jpg" alt="Detalj 3">
                     </div>
+                    <p>120 kvadrata, dvosoban. Kupatilo, dodatno wc, kuhinja full opremljena. Balkon ka prednjoj strani, balkon u sobama.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="kontakti.html" class="reserve-btn">Rezerviši</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+
+    <!-- Modal za Joves apartman -->
+    <div class="modal fade" id="apartman4Modal" tabindex="-1" aria-labelledby="apartman4ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apartman4ModalLabel">Joves</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="jovs13.jpg" class="main-image" alt="WoW Apartman">
+                    <div class="small-images">
+                        <img src="joves13a.jpg" alt="Detalj 1">
+                        <img src="joves-krevet.jpg" alt="Detalj 2">
+                        <img src="joves-zgrada.jpg" alt="Detalj 3">
+                    </div>
+                    <p>Delux apartman sa pogledom na panoramu Budve!</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="kontakti.html" class="reserve-btn">Rezerviši</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section class="about-section">
             <h2>O nama</h2>
